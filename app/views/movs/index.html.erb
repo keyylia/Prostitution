@@ -1,0 +1,47 @@
+<h1 style="text-align: center">Les différentes périodes historiques de la prostitution</h1>
+<br>
+
+
+  <img src="https://www.pariszigzag.fr/wp-content/uploads/2017/03/GervexHenri_Rolla1.jpg" alt="Rolla"  height="50%" width="50%" />
+  <p>
+  <FONT size="2.5"> Henri Gervex - <em>Rolla</em> </FONT></p>
+
+
+<h3 style="text-align: center; text-align: justify-all">La prostitution existe depuis toujours, et c'est un fait. On en retrouve des traces dès la Grèce et Rome Antique. 
+  <br>Les prostituées ont subit une évolution permanente : d'abord dans la rue, elles évoluent ensuite dans des bâtiments (les fameuses "maisons closes"). 
+  <br> Pourtant, même si ces établissements font partis intégrantes de la vie sociale, le statut des "putains" est toujours en suspension. Même maintenant, de grandes questions continuent de tourner autour de ces femmes. On hésite par exemple, encore, à parler de travail en abordant le sujet de la prostitution.
+  <br> <br> Je vous propose, dans ce musée, de nous attarder sur la vie de ces femmes au fil des siècles et d'observer comment les artistes dépeignent la vie de ces femmes, montrant ainsi la vision de l'époque. </h3>
+
+<br>
+<% @movs.each do |mov| %>
+  <div class="mov">
+    <p><strong><FONT size="4"><%= mov.title %></strong></FONT></p>
+    <p><%= mov.date %></p>
+    <p><%= mov.description %></p>
+    <br>
+    <br>
+    <%= link_to mov do %>
+      <img src="https://i.imgur.com/mcX4VPx.png" width="8%">
+    <% end %>
+    &nbsp
+    &nbsp
+        &nbsp
+    &nbsp
+    <%= link_to edit_mov_path(mov) do %>
+      <img src="https://i.imgur.com/jd0pEK2.png" width="8%">
+    <% end %>
+    &nbsp
+    &nbsp
+        &nbsp
+    &nbsp
+    <%= link_to mov, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } do %>
+    <img src="https://i.imgur.com/UcZ1coY.png" width="8%">
+    <% end %>
+  </div>
+<% end %>
+<br>
+<br>
+
+<%= link_to new_mov_path do %>
+<img src="https://i.imgur.com/ivUvw4S.png" width="5%">
+<% end %>

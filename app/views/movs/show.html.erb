@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<div class="underline">
+  <%= @mov.title %>
+</div>
+</p>
+
+<p>
+  <%= @mov.date %>
+</p>
+
+<p>
+  <%= @mov.description %>
+</p>
+<br>
+<p>
+  <FONT size="4">
+  <%= simple_format @mov.image%>
+</FONT>
+</p>
+
+<% @mov.images.each do |image| %>
+<%= image_tag image.url %>
+<% end %>
+
+<br> <br>
+<%= link_to movs_path do%>
+	<img src="https://i.imgur.com/tsF0uPi.png" width="3%" >
+	<% end %>
+	    &nbsp
+	        &nbsp
+	            &nbsp
+	                &nbsp
+    <%= link_to edit_mov_path(@mov) do %>
+      <img src="https://i.imgur.com/jd0pEK2.png" width="3%">
+    <% end %>

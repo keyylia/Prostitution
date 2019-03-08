@@ -1,0 +1,37 @@
+<%= form_with(model: mov, local: true) do |form| %>
+  <% if mov.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mov.errors.count, "error") %> prohibited this mov from being saved:</h2>
+
+      <ul>
+      <% mov.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.number_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
